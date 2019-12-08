@@ -1,0 +1,25 @@
+%For n = 0:199
+n = 0:199;
+x = input('Enter an equation of x: ');
+plot(n,x,'-.m');
+hold on;
+
+%from the 1:199
+for n = 1:199
+%Setting the condition n == 0, n <= 198, and n == 199
+    if n == 1
+        y = -1.5.*x(n) + 2.*x(n + 1) - 0.5.*x(n + 2);
+        plot(n,y,'oc');
+    elseif n <= 198
+        y = 0.5.*x(n + 1) - 0.5.*x(n - 1);
+        plot(n,y,'oc');
+    else
+        y = 1.5.*x(n) - 2.*x(n - 1) + 0.5.*x(n - 2);
+        plot(n,y,'oc');
+    end
+end
+%Labeling the graph 
+ylabel('y-axis');
+xlabel('x-axis');
+title('Machine Problem 5');
+legend('x','y');
