@@ -1,0 +1,50 @@
+#Given the use-input x(n), determine y(n) with a given condition
+# -1.5*x(n) + 2*x(n + 1) - 0.5*x(n + 2), n == 0
+# 0.5*x(n + 1) - 0.5(n - 1), 0 < n < 198
+# 1.5*x(n) - 2*x(n - 1) + 0.5*x(n - 2), n == 199
+
+#To math equations from math import<fnuction>
+#To access numpy library
+#To import matplotlib.pyplot library
+from math import*
+import numpy as np
+import matplotlib.pyplot as plt
+
+#For n = 0:199
+n = np.arange(0,200,1)
+form = input('Enter an equation of x: ')
+#Evaluating the given equation x
+x = eval(form)
+
+#from the range(0,200)
+for f in range(0,200):
+#Setting the condition n == 0, n <= 198, and n == 199
+    if n is 0:
+        a1 = eval(form)
+        n = n + 1
+        b1 = eval(form)
+        n = n + 2
+        c1 = eval(form)
+        y = (-1.5*a1) + (2*b1) - (0.5*c1)
+    elif n.all() <= 198:
+        n = n + 1
+        a2 = eval(form)
+        n = n - 1
+        b2 = eval(form)
+        y = (0.5*a2) - (0.5*b2)
+    else:
+        a3 = eval(form)
+        n = n - 1
+        b3 = eval(form)
+        n = n - 2
+        c3 = eval(form)
+        y = (1.5*a3) - (2*b3) + (0.5*c3)
+
+#In graphing the Given Equation
+plt.ylabel('y-axis')
+plt.xlabel('x-axis')
+plt.title('Machine Problem 5')
+plt.plot(x, 'm-.', label = "x")
+plt.plot(y, 'co',markerfacecolor = 'w',label = "y")
+plt.legend(loc="upper right")
+plt.show
